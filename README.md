@@ -26,6 +26,7 @@ BD_PORT=5432
 HOST_REDIS="localhost"
 PORT_REDIS=6379
 ~~~
+Obs: No meu caso, o redis está rodando localmente por meio do ubuntu instalado no mwu windows, tome cuidado, configure o redis (seja por meio do ubuntu ou utilizando docker).
 4. Na raiz do projeto, criar uma venv:
 ~~~python
 python -m venv venv

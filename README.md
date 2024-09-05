@@ -15,31 +15,54 @@ docker network create app-network
 ~~~
 docker run --name db_fast_api -p 5432:5432 -e POSRGRES_DB=db_fast_api -e POSTGRES_PASSWORD=1234 -d postgres
 ~~~
-3. Na raiz do projeto, criar uma venv:
+3. Na raiz do projeto, criar um arquivo .env com o seguinte conteúdo:
+~~~
+BD_NAME="db_fast_api"
+BD_USER="postgres"
+BD_PASSWORD="1234"
+BD_HOST="localhost"
+BD_PORT=5432
+
+HOST_REDIS="localhost"
+PORT_REDIS=6379
+~~~
+4. Na raiz do projeto, criar uma venv:
 ~~~python
 python -m venv venv
 ~~~
-4. executar a venv:
+5. executar a venv:
 ~~~python
 ./venv/scripts/activate
 ~~~
-5. Instale todas as bibliotecas necessárias:
+6. Instale todas as bibliotecas necessárias:
 ~~~
 pip install -r requirements.txt
 ~~~
-6. Criar as migrações (já foi registrada a migration para criação do banco de dados, mas por via das dúvidas pode seguir os passos a seguir):
+7. Criar as migrações (já foi registrada a migration para criação do banco de dados, mas por via das dúvidas pode seguir os passos a seguir):
 ~~~~
 alembic revision --autogenerate -m "Cria tabela de tasks"
 ~~~~
-7. Aplicar as migrações na base de dados:
+8. Aplicar as migrações na base de dados:
 ~~~~
 alembic upgrade head
 ~~~~
-8. Executar o projeto:
+9. Executar o projeto:
 ~~~python
 uvicorn main:app --reload
 ~~~
 Ou, por meio do docker:
+Mas, para conseguir obter sucesso, será necessário editar o .env:
+~~~
+BD_NAME="db_fast_api"
+BD_USER="postgres"
+BD_PASSWORD="1234"
+BD_HOST="db_fast_api"
+BD_PORT=5432
+
+HOST_REDIS="redis"
+PORT_REDIS=6379
+~~~
+Agora basta rodar o docker compose:
 ~~~
 docker compose up -d
 ~~~

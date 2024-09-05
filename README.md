@@ -1,7 +1,7 @@
 ﻿# APIToDoList
 
 > Descrição:
-### Implementação de microserviço para gerenciar uma lista de tarefas (to-do list) com os métodos do CRUD (Create, read, update, delete).
+### Implementação de microserviço para gerenciar uma lista de tarefas (to-do list) com os métodos do CRUD (Create, read, update, delete). nesta API foram aplicados os concentos basicos de RESTful, memória cache (redis), método find_all com retorno de uma response paginada e dentre outros recursos.
 
 > Execução:
 

@@ -1,8 +1,8 @@
-"""Cria tabelas de contas a pagar e receber
+"""Cria tabela de tasks
 
-Revision ID: eaf8d40945f8
+Revision ID: a0a2d46f0816
 Revises: 
-Create Date: 2024-09-05 11:54:45.854285
+Create Date: 2024-09-05 20:01:18.868252
 
 """
 from typing import Sequence, Union
@@ -12,7 +12,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision: str = 'eaf8d40945f8'
+revision: str = 'a0a2d46f0816'
 down_revision: Union[str, None] = None
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None

@@ -11,7 +11,7 @@
 ~~~
 docker network create app-network
 ~~~
-2. Colocar o servidor PostgreSQL para rodar utilizando docker com o seguinte comando:
+2. Colocar o servidor para o PostgreSQL rodar utilizando docker com o seguinte comando:
 ~~~
 docker run --name db_fast_api -p 5432:5432 -e POSRGRES_DB=db_fast_api -e POSTGRES_PASSWORD=1234 -d postgres
 ~~~

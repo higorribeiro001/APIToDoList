@@ -67,3 +67,14 @@ Agora basta rodar o docker compose:
 docker compose up -d
 ~~~
 ### Para acessar a documentação, basta acessar o link disponibilizado na execução (localmente será: http://127.0.0.1:8000) e acessar "/docs", desta forma: http://127.0.0.1:8000/docs. Com isto você terá acesso ao Swagger com todos os métodos e seus detalhes para utilização.
+
+> Testes:
+### Para realizar os testes será necessário está com a venv ativada. 
+#### Para rodar os testes integrados, cole o seguinte comando no terminal na raiz do projeto:
+~~~
+pytest ./test/tasks/routers/integrated_tests_tasks_router.py
+~~~
+#### Para rodar os testes unitários, cole o seguinte comando no terminal na raiz do projeto:
+~~~
+pytest ./test/tasks/routers/unitary_tests_tasks_router.py
+~~~

@@ -29,7 +29,7 @@ pip install -r requirements.txt
 ~~~
 6. Criar as migrações (já foi registrada a migration para criação do banco de dados, mas por via das dúvidas pode seguir os passos a seguir):
 ~~~~
-alembic revision --autogenerate -m "Cria tabelas de contas a pagar e receber"
+alembic revision --autogenerate -m "Cria tabela de tasks"
 ~~~~
 7. Aplicar as migrações na base de dados:
 ~~~~

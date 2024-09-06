@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: apitodolist-configmap
+data:
+  BD_PORT: "5432"
+  PORT_REDIS: "6379"

@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apitodolist-deployment
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: apitodolist
+  template:
+    metadata:
+      labels:
+        app: apitodolist
+    spec:
+      containers:
+      - name: apitodolist
+        image: higrara/fastapi:apitodolist-app
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8000
+        command: ["uvicorn"]
+        args: ["main:app", "--host", "0.0.0.0", "--port", "8000"]

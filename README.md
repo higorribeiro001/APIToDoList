@@ -17,13 +17,13 @@ docker run --name db_fast_api -p 5432:5432 -e POSRGRES_DB=db_fast_api -e POSTGRE
 ~~~
 3. Na raiz do projeto, criar um arquivo .env com o seguinte conteúdo:
 ~~~
-BD_NAME="db_fast_api"
+BD_NAME="db-fast-api1"
 BD_USER="postgres"
-BD_PASSWORD="1234"
-BD_HOST="localhost"
+BD_PASSWORD="monteseguro-fast_api"
+BD_HOST="db-fast-api1.c9uqi2c6if4h.us-east-2.rds.amazonaws.com"
 BD_PORT=5432
 
-HOST_REDIS="localhost"
+HOST_REDIS="3.138.109.56"
 PORT_REDIS=6379
 ~~~
 Obs: No meu caso, o redis está rodando localmente por meio do ubuntu instalado no mwu windows, tome cuidado, configure o redis (seja por meio do ubuntu ou utilizando docker).
@@ -52,18 +52,6 @@ alembic upgrade head
 uvicorn main:app --reload
 ~~~
 Ou, por meio do docker:
-Mas, para conseguir obter sucesso, será necessário editar o .env:
-~~~
-BD_NAME="db_fast_api"
-BD_USER="postgres"
-BD_PASSWORD="1234"
-BD_HOST="db_fast_api"
-BD_PORT=5432
-
-HOST_REDIS="redis"
-PORT_REDIS=6379
-~~~
-Agora basta rodar o docker compose:
 ~~~
 docker compose up -d
 ~~~
